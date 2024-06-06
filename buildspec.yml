@@ -16,7 +16,7 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: build
+    - './*'
+    - './scripts/*'
+  base-directory: .
   discard-paths: no
-  name: react-app
-  s3_bucket: cicd-pipeline-automation-final
