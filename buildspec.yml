@@ -20,3 +20,7 @@ artifacts:
     - './scripts/*'
   base-directory: .
   discard-paths: no
+
+cache:
+  paths:
+    - node_modules/**/*
