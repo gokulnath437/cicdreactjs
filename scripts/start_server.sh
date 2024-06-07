@@ -1,5 +1,7 @@
 #!/bin/bash
-# Start the server
-cd /var/www/html
-npm install -g serve
-serve -s build -l 3000 &
+# Script to start the server
+
+# Example: Start the server
+echo "Starting the server..."
+cd /var/www/html/myapp
+npm start
