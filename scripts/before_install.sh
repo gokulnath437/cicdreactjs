@@ -1,5 +1,6 @@
 #!/bin/bash
-# Stop the server if it's running
-pkill serve || true
-# Ensure the correct directory exists
-mkdir -p /var/www/html
+# Script for before install phase
+
+# Example: Stop the server if running
+echo "Stopping the server if running..."
+systemctl stop myapp.service || true
