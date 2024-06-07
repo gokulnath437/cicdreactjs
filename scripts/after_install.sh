@@ -1,5 +1,7 @@
 #!/bin/bash
-# Change to the app directory
-cd /var/www/html
-# Ensure the correct permissions
-chmod -R 755 .
+# Script for after install phase
+
+# Example: Install Node.js dependencies
+echo "Installing Node.js dependencies..."
+cd /var/www/html/myapp
+npm install
