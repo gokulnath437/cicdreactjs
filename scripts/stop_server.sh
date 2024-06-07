@@ -1,3 +1,4 @@
 #!/bin/bash
 # Stop the server
-pkill serve || true
+echo "Stopping the server"
+pkill -f serve || true
