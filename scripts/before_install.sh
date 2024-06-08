@@ -1,3 +1,4 @@
 #!/bin/bash
-# No actions needed before installing the application
-echo "BeforeInstall phase: No actions needed."
+# BeforeInstall script to handle existing files
+echo "BeforeInstall phase: Removing existing files to avoid conflicts..."
+rm -rf /var/www/html/*
