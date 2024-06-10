@@ -8,5 +8,5 @@ echo "BeforeInstall phase: Installing Node.js and npm if not installed..."
 if ! command -v node &> /dev/null
 then
     curl -sL https://rpm.nodesource.com/setup_16.x | sudo bash -
-    sudo yum install -y nodejs
+    sudo apt install -y nodejs
 fi
