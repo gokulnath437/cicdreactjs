@@ -6,7 +6,7 @@ phases:
       nodejs: 14  # Specify the Node.js version
     commands:
       - echo "Installing Node.js dependencies..."
-      - npm ci  # Use `npm ci` for a clean install from package-lock.json
+      - npm install  # Use `npm ci` for a clean install from package-lock.json
   pre_build:
     commands:
       - echo "Running linting and unit tests..."
