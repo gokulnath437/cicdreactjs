@@ -1,26 +1,27 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+
   pre_build:
     commands:
-      - echo "Installing Node.js dependencies..."
-      - npm install
+      - echo Running linting and unit tests...
+      - npm run lint
+      - npm test
+
   build:
     commands:
-      - echo "Building the React application..."
+      - echo Build started on `date`
+      - echo Compiling the application...
       - npm run build
-  post_build:
-    commands:
-      - echo "Post-build steps..."
-      - echo "Build completed on $(date)"
+
 artifacts:
   files:
     - '**/*'
-    - './*'
-    - './scripts/*'
-  base-directory: .
-  discard-paths: no
-
-cache:
-  paths:
-    - node_modules/**/*
+  discard-paths: yes
+  base-directory: dist
