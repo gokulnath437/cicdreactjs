@@ -1,24 +1,26 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      nodejs: 14  # Specify the Node.js version
-    commands:
-      - echo "Installing Node.js dependencies..."
-      - npm install  # Use `npm ci` for a clean install from package-lock.json
   pre_build:
     commands:
-      - echo "Running linting and unit tests..."
-      - npm test
+      - echo "Installing Node.js dependencies..."
+      - npm install
   build:
     commands:
-      - echo "Building the application..."
+      - echo "Building the React application..."
       - npm run build
+  post_build:
+    commands:
+      - echo "Post-build steps..."
+      - echo "Build completed on $(date)"
 artifacts:
   files:
     - '**/*'
-  discard-paths: yes
+    - './*'
+    - './scripts/*'
+  base-directory: .
+  discard-paths: no
+
 cache:
   paths:
-    - 'node_modules/**/*'
+    - node_modules/**/*
