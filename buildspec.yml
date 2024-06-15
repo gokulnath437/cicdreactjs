@@ -2,9 +2,11 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 14  # Specify the Node.js version
     commands:
       - echo "Installing Node.js dependencies..."
-      - npm install
+      - npm ci  # Use `npm ci` for a clean install from package-lock.json
   pre_build:
     commands:
       - echo "Running linting and unit tests..."
@@ -12,9 +14,12 @@ phases:
       - npm test
   build:
     commands:
-      - echo Building the application...
+      - echo "Building the application..."
       - npm run build
 artifacts:
   files:
     - '**/*'
   discard-paths: yes
+cache:
+  paths:
+    - 'node_modules/**/*'
