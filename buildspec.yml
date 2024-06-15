@@ -2,25 +2,19 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 14
     commands:
-      - echo Installing source NPM dependencies...
+      - echo "Installing Node.js dependencies..."
       - npm install
-
   pre_build:
     commands:
-      - echo Running linting and unit tests...
+      - echo "Running linting and unit tests..."
+      - npm run lint
       - npm test
-
   build:
     commands:
-      - echo Build started on `date`
-      - echo Compiling the application...
+      - echo Building the application...
       - npm run build
-
 artifacts:
   files:
     - '**/*'
   discard-paths: yes
-  base-directory: dist
