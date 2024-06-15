@@ -5,8 +5,8 @@ rm -rf /var/www/html/*
 
 # Install Node.js and npm if not installed
 echo "BeforeInstall phase: Installing Node.js and npm if not installed..."
-if ! command -v node &> /dev/null
-then
-    curl -sL https://rpm.nodesource.com/setup_16.x | sudo bash -
-    sudo apt install -y nodejs
-fi
+#if ! command -v node &> /dev/null
+#then
+  #  curl -sL https://rpm.nodesource.com/setup_16.x | sudo bash -
+   sudo apt install -y nodejs
+#fi
